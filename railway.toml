@@ -1,0 +1,14 @@
+# Railway deployment config for SpreadHunter
+# Docs: https://docs.railway.com/guides/deployments
+
+[build]
+  builder = "NIXPACKS"
+
+[deploy]
+  # Create/update DB tables from the schema, then start the production server.
+  # DATABASE_URL is injected by the Railway Postgres service.
+  startCommand = "npx drizzle-kit push --force && npm start"
+  healthcheckPath = "/api/health"
+  healthcheckTimeout = 120
+  restartPolicyType = "ON_FAILURE"
+  restartPolicyMaxRetries = 10

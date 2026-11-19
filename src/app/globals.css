@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root { --bg: #0b0e11; }
+* { scrollbar-width: thin; scrollbar-color: #2b3139 #161a1e; }
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-thumb { background: #2b3139; border-radius: 999px; }
+*::-webkit-scrollbar-track { background: #161a1e; }
+body { background: #0b0e11; }
+@keyframes flashGreen { 0% { background: rgba(14,203,129,.25);} 100% { background: transparent;} }
+@keyframes pulseDot { 0%,100%{ opacity:1; transform:scale(1);} 50%{ opacity:.5; transform:scale(.8);} }
+.flash { animation: flashGreen 1s ease; }
+.live-dot { animation: pulseDot 1.2s infinite; }
